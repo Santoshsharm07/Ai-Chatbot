@@ -1,17 +1,13 @@
 import streamlit as st
 import google.generativeai as genai
 import os
-from dotenv import load_dotenv
 
+# Initialize Google Generative AI
 # =========================
-# 🔑 Load API Key
-# =========================
-load_dotenv()
-api_key = st.secrets["GOOGLE_API_KEY"]
-genai.configure(api_key=api_key)
-
-if not api_key:
-    st.error("⚠️ GEMINI_API_KEY not found! Please add it to your `.env` file.")
+try:
+    api_key = st.secrets["GOOGLE_API_KEY"]
+except KeyError:
+    st.error("⚠️ GOOGLE_API_KEY not found! Please add it in Streamlit Secrets.")
     st.stop()
 
 genai.configure(api_key=api_key)
