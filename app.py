@@ -7,7 +7,8 @@ from dotenv import load_dotenv
 # 🔑 Load API Key
 # =========================
 load_dotenv()
-api_key = os.getenv("GEMINI_API_KEY")
+api_key = st.secrets["GOOGLE_API_KEY"]
+genai.configure(api_key=api_key)
 
 if not api_key:
     st.error("⚠️ GEMINI_API_KEY not found! Please add it to your `.env` file.")
