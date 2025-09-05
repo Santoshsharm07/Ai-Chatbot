@@ -1,54 +1,104 @@
-# 🤖 AI Chatbot with Streamlit + Gemini API
+# 💬 AI Chatbot
 
-An interactive chatbot built using **Google Gemini API** and **Streamlit**.  
-This project provides a sleek chat interface where users can interact with an AI assistant in real time.
-
----
-
-## ✨ Features
-- 💬 Real-time AI conversations using **Gemini API**  
-- 🎨 Beautiful UI with custom styling in Streamlit  
-- 📜 Chat history saved in session state  
-- ⚙️ Sidebar controls to reset chat  
-- 🚀 Ready for deployment on **Streamlit Cloud**  
+A modern AI-powered chatbot built with Streamlit and Google Gemini API, supporting text and image inputs. Interact with the chatbot in a stylish web interface with live chat history.
 
 ---
 
-## 🛠️ Tech Stack
-- **Python 3.9+**
-- [Streamlit](https://streamlit.io/)
-- [Google Generative AI SDK](https://ai.google.dev/)
-- [python-dotenv](https://pypi.org/project/python-dotenv/)
+## 🚀 Features
+
+* Real-time AI chat powered by Google Gemini API.
+* Upload images to include in your messages.
+* Dynamic chat display with custom styling for user and assistant messages.
+* Clear chat functionality.
+* Responsive, modern UI with gradient background and styled chat bubbles.
 
 ---
 
-## ⚡ Installation & Setup
+## 🛠 Tech Stack
 
-Clone the repository:
+* Frontend & Backend: Streamlit
+* AI API: Google Generative AI (Gemini)
+* Image Handling: PIL / Pillow
+* Language: Python 3.x
 
-1. Local Development
+---
 
-Create a .env file in the project root and add:
+## ⚡ Installation
 
-GOOGLE_API_KEY=your_api_key_here
+1. Clone the repository:
 
-2. Streamlit Cloud Deployment
+```
+git clone https://github.com/Santoshsharm07/Ai-Chatbot.git
+cd Ai-Chatbot
+```
 
-Go to Streamlit Cloud → Settings → Secrets and add:
+2. Create a virtual environment (optional but recommended):
 
-GOOGLE_API_KEY="your_api_key_here"
+```
+python -m venv venv
+source venv/bin/activate   # Linux/macOS
+venv\Scripts\activate      # Windows
+```
 
-▶️ Run the App
+3. Install dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+4. Set up Streamlit secrets:
+
+* Create a file `.streamlit/secrets.toml` with your API key:
+
+```
+GOOGLE_API_KEY = "your_google_gemini_api_key"
+```
+
+---
+
+## 🏃 Running the App
+
+```
 streamlit run app.py
+```
 
-🚀 Deployment on Streamlit Cloud
+* Open the URL shown in the terminal to interact with the chatbot.
+* Upload images via the sidebar or type messages in the chat input box.
 
-Push your code to GitHub
+---
 
-Go to Streamlit Cloud
+## 🎨 UI / UX
 
-Click New App → Connect your repo → Select app.py
+* Gradient background with white text.
+* Custom chat bubbles for user (purple) and assistant (blue).
+* Scrollable chat history container.
+* Interactive sidebar for settings (clear chat, upload images).
 
-Add your API Key in Secrets Management
+---
 
-Done 🎉 Your chatbot is live!
+## 📦 Folder Structure
+
+```
+Ai-Chatbot/
+├─ app.py            # Main Streamlit app
+├─ requirements.txt  # Python dependencies
+├─ README.md         # Project documentation
+└─ .streamlit/
+   └─ secrets.toml   # API keys (not committed)
+```
+
+---
+
+## 🔑 Notes
+
+* Ensure you have a valid Google Generative AI API key to use the Gemini model.
+* Compatible with Python 3.10+.
+* Tested on Streamlit 1.30+.
+
+---
+
+## ⚡ Deployment
+
+* Can be deployed on Streamlit Community Cloud for free.
+* Click “Deploy” and connect your GitHub repository.
+* Make sure to add secrets for `GOOGLE_API_KEY` in Streamlit Cloud.
