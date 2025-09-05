@@ -103,8 +103,7 @@ with chat_container:
 # =========================
 # ⌨️ User Input
 # =========================
-with st.chat_input("Type your message...") as prompt_input:
-    prompt = prompt_input
+prompt = st.chat_input("Type your message...")
 
 if prompt or uploaded_image:
     user_msg = {"role": "user", "content": prompt if prompt else ""}
