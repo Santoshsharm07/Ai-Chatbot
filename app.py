@@ -119,7 +119,7 @@ with input_container:
 
     with col1:
         # The "+" button opens a popover for file uploads
-        with st.popover("Upload", use_container_width=True):
+        with st.popover("+", use_container_width=True):
             uploaded_file = st.file_uploader(
                 "Upload an image...",
                 type=["png", "jpg", "jpeg"],
